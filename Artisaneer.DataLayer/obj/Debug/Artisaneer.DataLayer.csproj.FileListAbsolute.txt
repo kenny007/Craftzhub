@@ -1,0 +1,13 @@
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\bin\Debug\Artisaneer.DataLayer.dll.config
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\bin\Debug\Artisaneer.DataLayer.dll
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\bin\Debug\Artisaneer.DataLayer.pdb
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\bin\Debug\Artisaneer.Models.dll
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\bin\Debug\OfficeOnline.DataBlock.dll
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\bin\Debug\System.Linq.Dynamic.dll
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\bin\Debug\Artisaneer.Models.pdb
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\obj\Debug\Artisaneer.DataLayer.csprojResolveAssemblyReference.cache
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\obj\Debug\Artisaneer.DataLayer.dll
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.DataLayer\obj\Debug\Artisaneer.DataLayer.pdb

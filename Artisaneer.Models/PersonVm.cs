@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Artisaneer.Models
+{
+    public class PersonVm
+    {
+        public int PersonId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Skill { get; set; }
+        public string Email { get; set; }
+        public DateTime? RegDate { get; set; }
+    }
+}

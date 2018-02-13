@@ -1,0 +1,44 @@
+﻿<html ng-app="registrationModule">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - College Registration</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery","~/bundles/bootstrap")
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-resource.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/registration-module.js"></script>
+    @RenderSection("JavascriptInHead", required:false)
+</head>
+<body style="background-color:#eeeeee;">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="brand" href="/" target="_self" >CraftzHub</a>
+                <div class="nav-collapse collapse">
+                  <ul class="nav pull-right">
+                        <li><small><a href="/Registration/Login" class="btn btn-inverse">Login</a></small></li>
+                        <li><small><a href="/Registration/Register" class="btn btn-success">Signup</a></small></li>
+                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+       <div class="container">
+             @RenderBody()  
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+</body>
+</html>
+

@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ArtisanHubModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ArtisanHubEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="ArtisanHubModel.Address" />
+    <EntitySet Name="Genders" EntityType="ArtisanHubModel.Gender" />
+    <EntitySet Name="People" EntityType="ArtisanHubModel.Person" />
+    <EntitySet Name="PersonsInRoles" EntityType="ArtisanHubModel.PersonsInRole" />
+    <EntitySet Name="Roles" EntityType="ArtisanHubModel.Role" />
+    <EntitySet Name="States" EntityType="ArtisanHubModel.State" />
+    <EntitySet Name="StateLGAs" EntityType="ArtisanHubModel.StateLGA" />
+    <EntitySet Name="sysdiagrams" EntityType="ArtisanHubModel.sysdiagram" />
+    <AssociationSet Name="FK_Address_State" Association="ArtisanHubModel.FK_Address_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_StateLGA" Association="ArtisanHubModel.FK_Address_StateLGA">
+      <End Role="StateLGA" EntitySet="StateLGAs" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Address2" Association="ArtisanHubModel.FK_Person_Address2">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="Person" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Gender" Association="ArtisanHubModel.FK_Person_Gender">
+      <End Role="Gender" EntitySet="Genders" />
+      <End Role="Person" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Roles" Association="ArtisanHubModel.FK_Person_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Person" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StateLGA_State" Association="ArtisanHubModel.FK_StateLGA_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="StateLGA" EntitySet="StateLGAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_Person" Association="ArtisanHubModel.FK_Address_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
+    <EntitySet Name="Skills" EntityType="ArtisanHubModel.Skill" />
+    <AssociationSet Name="FK_Person_Skills" Association="ArtisanHubModel.FK_Person_Skills">
+      <End Role="Skill" EntitySet="Skills" />
+      <End Role="Person" EntitySet="People" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="Guid" Nullable="false" />
+    <Property Name="StateID" Type="Byte" Nullable="false" />
+    <Property Name="StateLGID" Type="Int32" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Address2" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="State" Relationship="ArtisanHubModel.FK_Address_State" FromRole="Address" ToRole="State" />
+    <NavigationProperty Name="StateLGA" Relationship="ArtisanHubModel.FK_Address_StateLGA" FromRole="Address" ToRole="StateLGA" />
+    <NavigationProperty Name="People" Relationship="ArtisanHubModel.FK_Person_Address2" FromRole="Address" ToRole="Person" />
+    <Property Type="Int32" Name="PersonId" />
+    <NavigationProperty Name="Person" Relationship="ArtisanHubModel.FK_Address_Person" FromRole="Address" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="Boolean" Nullable="false" />
+    <Property Name="GenderDisplay" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="People" Relationship="ArtisanHubModel.FK_Person_Gender" FromRole="Gender" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="PersonId" />
+    </Key>
+    <Property Name="PersonId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="GenderID" Type="Boolean" />
+    <Property Name="ImageSource" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="LGA" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="3" />
+    <Property Name="AddressID" Type="Guid" />
+    <Property Name="UserName" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="42" Unicode="true" FixedLength="false" />
+    <Property Name="ConfirmPassword" Type="String" MaxLength="42" Unicode="true" FixedLength="false" />
+    <Property Name="RoleId" Type="Int32" />
+    <NavigationProperty Name="Address" Relationship="ArtisanHubModel.FK_Person_Address2" FromRole="Person" ToRole="Address" />
+    <NavigationProperty Name="Gender" Relationship="ArtisanHubModel.FK_Person_Gender" FromRole="Person" ToRole="Gender" />
+    <NavigationProperty Name="Role" Relationship="ArtisanHubModel.FK_Person_Roles" FromRole="Person" ToRole="Roles" />
+    <Property Type="String" Name="StandardID" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Addresses" Relationship="ArtisanHubModel.FK_Address_Person" FromRole="Person" ToRole="Address" />
+    <Property Type="String" Name="Address1" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SkillId" />
+    <NavigationProperty Name="Skill" Relationship="ArtisanHubModel.FK_Person_Skills" FromRole="Person" ToRole="Skill" />
+  </EntityType>
+  <EntityType Name="PersonsInRole">
+    <Key>
+      <PropertyRef Name="PersonId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="PersonId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="People" Relationship="ArtisanHubModel.FK_Person_Roles" FromRole="Roles" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Byte" Nullable="false" />
+    <Property Name="StateName" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="StateShort" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Addresses" Relationship="ArtisanHubModel.FK_Address_State" FromRole="State" ToRole="Address" />
+    <NavigationProperty Name="StateLGAs" Relationship="ArtisanHubModel.FK_StateLGA_State" FromRole="State" ToRole="StateLGA" />
+  </EntityType>
+  <EntityType Name="StateLGA">
+    <Key>
+      <PropertyRef Name="StateLGID" />
+    </Key>
+    <Property Name="StateLGID" Type="Int32" Nullable="false" />
+    <Property Name="StateID" Type="Byte" />
+    <Property Name="LGName" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="Code" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Addresses" Relationship="ArtisanHubModel.FK_Address_StateLGA" FromRole="StateLGA" ToRole="Address" />
+    <NavigationProperty Name="State" Relationship="ArtisanHubModel.FK_StateLGA_State" FromRole="StateLGA" ToRole="State" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Address_State">
+    <End Role="State" Type="ArtisanHubModel.State" Multiplicity="1" />
+    <End Role="Address" Type="ArtisanHubModel.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_StateLGA">
+    <End Role="StateLGA" Type="ArtisanHubModel.StateLGA" Multiplicity="1" />
+    <End Role="Address" Type="ArtisanHubModel.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StateLGA">
+        <PropertyRef Name="StateLGID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="StateLGID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Address2">
+    <End Role="Address" Type="ArtisanHubModel.Address" Multiplicity="0..1" />
+    <End Role="Person" Type="ArtisanHubModel.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Gender">
+    <End Role="Gender" Type="ArtisanHubModel.Gender" Multiplicity="0..1" />
+    <End Role="Person" Type="ArtisanHubModel.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderID" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="GenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Roles">
+    <End Role="Roles" Type="ArtisanHubModel.Role" Multiplicity="0..1" />
+    <End Role="Person" Type="ArtisanHubModel.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StateLGA_State">
+    <End Role="State" Type="ArtisanHubModel.State" Multiplicity="0..1" />
+    <End Role="StateLGA" Type="ArtisanHubModel.StateLGA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="StateLGA">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_Person">
+    <End Type="ArtisanHubModel.Person" Role="Person" Multiplicity="0..1" />
+    <End Type="ArtisanHubModel.Address" Role="Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonId" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="SkillId" />
+    </Key>
+    <Property Type="Int32" Name="SkillId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SkillName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="People" Relationship="ArtisanHubModel.FK_Person_Skills" FromRole="Skill" ToRole="Person" />
+  </EntityType>
+  <Association Name="FK_Person_Skills">
+    <End Type="ArtisanHubModel.Skill" Role="Skill" Multiplicity="0..1" />
+    <End Type="ArtisanHubModel.Person" Role="Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skill">
+        <PropertyRef Name="SkillId" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="SkillId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

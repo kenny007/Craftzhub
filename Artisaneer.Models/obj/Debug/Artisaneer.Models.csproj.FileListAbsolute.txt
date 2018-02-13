@@ -1,0 +1,7 @@
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.Models\bin\Debug\Artisaneer.Models.dll.config
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.Models\bin\Debug\Artisaneer.Models.dll
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.Models\bin\Debug\Artisaneer.Models.pdb
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.Models\bin\Debug\EntityFramework.dll
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.Models\bin\Debug\EntityFramework.xml
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.Models\obj\Debug\Artisaneer.Models.dll
+C:\Users\HUPOMONE\Documents\Visual Studio 2012\Projects\Artisaneer\Artisaneer.Models\obj\Debug\Artisaneer.Models.pdb

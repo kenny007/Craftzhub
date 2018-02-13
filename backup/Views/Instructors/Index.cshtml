@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+ }
+<script src="~/Scripts/Instructors/instructors-controller.js"></script>
+@section JavascriptInHead
+{
+ <script type="text/javascript">
+     registrationModule.factory('bootstrappedInstructors', function () {
+         return {
+             instructors:@Html.Raw(Model)
+             };
+    });    
+ </script>
+}
+
+<div class="container" ng-controller="InstructorsController">
+
+    <div class="row">
+    <div class="span10">
+        <h2>Instructors</h2>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="span10">
+            <table class="table table-condensed table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Email </th>
+                    <th>RoomNumber</th>
+                </tr>
+                <tr ng-repeat="instructor in instructors">
+                    <td>{{instructor.name}}</td>
+                    <td>{{instructor.email}}</td>
+                    <td>{{instructor.roomNumber}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

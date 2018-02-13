@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+  }
+
+@section JavascriptInHead  {
+    <script src="~/Scripts/Home/home-controller.js"></script>
+    <script src="~/Scripts/Home/home-repository.js"></script>
+    <script src="~/Scripts/Registration/registration-controller.js"></script>
+    <script src="~/Scripts/Registration/registration-repository.js"></script> 
+    <script src="~/Scripts/Login/login-controller.js"></script>
+    <script src="~/Scripts/Login/login-repository.js"></script>
+    @*<script src="~/Scripts/Instructors/instructors-controller.js"></script>      
+    <script src="~/Scripts/Instructors/instructor-repository.js"></script>*@
+    <script src="~/Scripts/Custom/custom-directives.js"></script>
+@*
+   <script src="~/Scripts/Account/account-controller.js"></script>
+    <script src="~/Scripts/Account/account-repository.js"></script> *@
+}
+
+<div ng-view></div>
+  

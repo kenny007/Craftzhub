@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="89df0ac931c54608b54bee29b4989182" Name="Diagram1">
+        <EntityTypeShape EntityType="ArtisanHubModel.Address" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtisanHubModel.Gender" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtisanHubModel.Person" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtisanHubModel.PersonsInRole" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtisanHubModel.Role" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtisanHubModel.State" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtisanHubModel.StateLGA" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtisanHubModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ArtisanHubModel.FK_Address_State" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtisanHubModel.FK_Address_StateLGA" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtisanHubModel.FK_Person_Address2" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtisanHubModel.FK_Person_Gender" ManuallyRouted="true" >
+          <ConnectorPoint PointX="6.75" PointY="3.5067350260416665" />
+          <ConnectorPoint PointX="7.59375" PointY="3.5067350260416665" />
+          <ConnectorPoint PointX="7.59375" PointY="4.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="ArtisanHubModel.FK_Person_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtisanHubModel.FK_StateLGA_State" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtisanHubModel.FK_Address_Person" />
+        <EntityTypeShape EntityType="ArtisanHubModel.Skill" Width="1.5" PointX="5.7672765002433568" PointY="24.882698920035129" />
+        <AssociationConnector Association="ArtisanHubModel.FK_Person_Skills" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

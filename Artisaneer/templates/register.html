@@ -1,0 +1,116 @@
+﻿<div class="row-fluid">
+<div class="wrapper">
+<section class="regInfo">
+<div class="row"> 
+  
+     <div class="ctSign">           
+               <h1>Signup for free today!</h1>
+                <button class="fb">
+                    <span>Sign up with Facebook</span>
+                </button>
+             <div class="hr">
+                <div class="inner">or</div>
+             </div>
+     </div>
+    </div>
+
+<form name="artForm" novalidate>
+    <div class="error">{{message}}</div>
+ <div class="row-fluid">
+   <div class="span6">
+    <i class="icon-user"></i>
+    <input type="text" name="Username" placeholder="User name"  ng-model="artisan.username" class="form-control" data-ng-pattern="/^[a-zA-Z0-9]{4,10}$/"
+        ng-unique=Username" required/>
+   <div style="color:red" ng-show="artForm.Username.$error.required && artForm.Username.$dirty">Please enter a valid Username.</div> 
+   <span class="error" data-ng-show="artForm.UserName.$error.pattern">Invalid user name.</span> 
+    <span style="color:red" data-ng-show="artForm.UserName.$error.unique">Username already exists.</span>
+       
+   </div>
+
+   <div class="span6">
+     <i class="icon-user"></i>
+    <input type="text"  name="email" placeholder="Email" ng-model="artisan.email" class="form-control" required ng-pattern="/^[a-zA-Z0-9'._%+-]+@[a-zA-Z0-9-][a-zA-Z0-9.-]*\.[a-zA-Z]{2,9}$/"/>
+    <div style="color:red" ng-show="artForm.email.$error.required && artForm.email.$dirty">Please enter a valid email address.</div>
+    <div style="color:red" ng-show="artForm.email.$error.pattern && artForm.email.$dirty">Invalid email address.</div>     
+   </div>
+ </div>
+
+ <div class="row-fluid">
+   <div class="span6">
+     <i class="icon-user"></i>
+    <input type="password" name="password" id="password" placeholder="Password"  ng-model="artisan.password" class="form-control" required/>
+    <div style="color:red" ng-show="artForm.password.$error.required && artForm.password.$dirty">Please enter a password.</div>   
+   </div>
+
+   <div class="span6">
+    <i class="icon-user"></i>
+    <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password" ng-model="artisan.confirmpassword" pw-check="password" 
+        class="form-control" required/>
+    <div style="color:red" ng-show="artForm.confirmpassword.$error.pwmatch">Passwords do not match.</div>
+   </div>
+   </div>
+
+ <div class="row-fluid">
+   <div class="span6">
+     <i class="icon-user"></i>
+    <input type="text" name="lastname" placeholder="Last Name" ng-model="artisan.lastName" class="form-control" required/>
+       <div style="color:red" ng-show="artForm.lastname.$error.required && artForm.lastname.$dirty">Please enter a LastName.</div>         
+   </div>
+
+   <div class="span6">
+    <i class="icon-user"></i>
+    <input type="text" name="firstname"  placeholder="First Name"  ng-model="artisan.firstName" class="form-control" required/>
+    <div style="color:red" ng-show="artForm.firstname.$error.required && artForm.firstname.$dirty">Please enter a FirstName.</div>     
+   </div>
+  </div>
+
+ <div class="row-fluid">
+   <div class="span6">
+     <i class="icon-user"></i>
+    <input type="text" name="address" placeholder="Address"  ng-model="artisan.address" class="form-control"  required />
+    <div style="color:red" ng-show="artForm.address.$error.required && artForm.address.$dirty">Please enter your office address.</div>
+   </div>
+
+   <div class="span6">
+    <i class="icon-user"></i>
+    <input type="text" name="phonenumber" placeholder="Mobile number" ng-model="artisan.phonenumber" class="form-control"  required/>
+    <div style="color:red" ng-show="artForm.phonenumber.$error.required && artForm.phonenumber.$dirty">Please enter your mobile number.</div>
+   </div>
+   </div>
+
+  <div class="row-fluid">
+   <div class="span6">
+     <i class="icon-user"></i>
+       <select ng-model="artisan.state" ng-options="s.StateID as s.StateName for s in states" ng-change="getLGA()">
+          <option value="">--State of work--</option>
+       </select>
+   </div>
+
+   <div class="span6">
+    <i class="icon-user"></i>
+    <select  data-ng-model="artisan.localgovt" data-ng-disabled="!lgovts" data-ng-options="c.StateLGID as c.LGName for c in lgovts">
+          <option value="">--Local govt--</option>
+       </select>
+   </div>
+   </div>
+   
+   <div class="row-fluid">
+       <div class="offset3 span6">
+    <select  ng-model="artisan.skillId"  ng-options="c.SkillId as c.SkillName for c in skills">
+          <option value="">--Select Skill--</option>
+    </select>
+   </div>
+    </div>
+
+   <div class="button-create">
+        <button class="btn btn-success btn-large" ng-click="save()">Create Account</button>
+     <!--<div style="color:red" ng-show="errors.length > 0" ng-repeat="error in errors">{{error}}</div>-->  
+    </div>
+    <ul>
+     <li id="errorMessages" class="error" data-ng-repeat="error in errors">{{error}}</li>
+    </ul>
+</form>
+  </section>
+</div>
+   </div>
+

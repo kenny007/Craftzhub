@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ArtisanHubModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ArtisanHubModelStoreContainer">
+    <EntitySet Name="Address" EntityType="ArtisanHubModel.Store.Address" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Gender" EntityType="ArtisanHubModel.Store.Gender" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Person" EntityType="ArtisanHubModel.Store.Person" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonsInRole" EntityType="ArtisanHubModel.Store.PersonsInRole" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="ArtisanHubModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Skills" EntityType="ArtisanHubModel.Store.Skills" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="State" EntityType="ArtisanHubModel.Store.State" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StateLGA" EntityType="ArtisanHubModel.Store.StateLGA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="ArtisanHubModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Address_Person" Association="ArtisanHubModel.Store.FK_Address_Person">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_State" Association="ArtisanHubModel.Store.FK_Address_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_StateLGA" Association="ArtisanHubModel.Store.FK_Address_StateLGA">
+      <End Role="StateLGA" EntitySet="StateLGA" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Gender" Association="ArtisanHubModel.Store.FK_Person_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Roles" Association="ArtisanHubModel.Store.FK_Person_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Skills" Association="ArtisanHubModel.Store.FK_Person_Skills">
+      <End Role="Skills" EntitySet="Skills" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StateLGA_State" Association="ArtisanHubModel.Store.FK_StateLGA_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="StateLGA" EntitySet="StateLGA" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StateID" Type="tinyint" Nullable="false" />
+    <Property Name="StateLGID" Type="int" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="60" />
+    <Property Name="PersonId" Type="int" />
+    <Property Name="Address2" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="bit" Nullable="false" />
+    <Property Name="GenderDisplay" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="PersonId" />
+    </Key>
+    <Property Name="PersonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="GenderID" Type="bit" />
+    <Property Name="ImageSource" Type="nvarchar(max)" />
+    <Property Name="LGA" Type="nvarchar(max)" />
+    <Property Name="State" Type="nvarchar(max)" />
+    <Property Name="RegDate" Type="datetime" />
+    <Property Name="AddressID" Type="uniqueidentifier" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="15" />
+    <Property Name="Password" Type="nvarchar" MaxLength="42" />
+    <Property Name="ConfirmPassword" Type="nvarchar" MaxLength="42" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="StandardID" Type="nvarchar" MaxLength="10" />
+    <Property Name="Address" Type="nvarchar" MaxLength="60" />
+    <Property Name="SkillId" Type="int" />
+  </EntityType>
+  <EntityType Name="PersonsInRole">
+    <Key>
+      <PropertyRef Name="PersonId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="PersonId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Skills">
+    <Key>
+      <PropertyRef Name="SkillId" />
+    </Key>
+    <Property Name="SkillId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SkillName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="nvarchar" MaxLength="60" />
+    <Property Name="StateShort" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="StateLGA">
+    <Key>
+      <PropertyRef Name="StateLGID" />
+    </Key>
+    <Property Name="StateLGID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StateID" Type="tinyint" />
+    <Property Name="LGName" Type="nvarchar" MaxLength="60" />
+    <Property Name="Code" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Address_Person">
+    <End Role="Person" Type="ArtisanHubModel.Store.Person" Multiplicity="0..1" />
+    <End Role="Address" Type="ArtisanHubModel.Store.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonId" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_State">
+    <End Role="State" Type="ArtisanHubModel.Store.State" Multiplicity="1" />
+    <End Role="Address" Type="ArtisanHubModel.Store.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_StateLGA">
+    <End Role="StateLGA" Type="ArtisanHubModel.Store.StateLGA" Multiplicity="1" />
+    <End Role="Address" Type="ArtisanHubModel.Store.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StateLGA">
+        <PropertyRef Name="StateLGID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="StateLGID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Gender">
+    <End Role="Gender" Type="ArtisanHubModel.Store.Gender" Multiplicity="0..1" />
+    <End Role="Person" Type="ArtisanHubModel.Store.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderID" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="GenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Roles">
+    <End Role="Roles" Type="ArtisanHubModel.Store.Roles" Multiplicity="0..1" />
+    <End Role="Person" Type="ArtisanHubModel.Store.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Skills">
+    <End Role="Skills" Type="ArtisanHubModel.Store.Skills" Multiplicity="0..1" />
+    <End Role="Person" Type="ArtisanHubModel.Store.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skills">
+        <PropertyRef Name="SkillId" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="SkillId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StateLGA_State">
+    <End Role="State" Type="ArtisanHubModel.Store.State" Multiplicity="0..1" />
+    <End Role="StateLGA" Type="ArtisanHubModel.Store.StateLGA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="StateLGA">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'ArtisanHub.dbo.EbTableControl' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="EbTableControl">
+        <Property Name="NextNumber" Type="int" />
+      </EntityType>-->
+</Schema>

@@ -1,0 +1,50 @@
+﻿<div class="row-fluid">
+<div class="wrapperlog">
+<section class="regInfo">
+<div class="row">
+  <div class="ctSign">           
+                <button class="fb">
+                    <span>Login with Facebook</span>
+                </button>
+             <div class="hr">
+                <div class="inner">or</div>
+             </div>
+     </div>
+</div>
+
+<form name="accessForm" novalidate>
+        <!--<div class="">{{error}}</div>-->
+<div class="row-fluid">
+   <div class="offset1 span9">
+    <i class="icon-user"></i>
+    <input type="text" name="Username" placeholder="Username"  ng-model="access.username" class="form-control" required/>
+   <div style="color:red" ng-show="access.username.$error.required && access.username.$dirty">Please enter a valid Username.</div>         
+   </div>
+</div>
+
+<div class="row-fluid">
+   <div class="offset1 span9">
+     <i class="icon-user"></i>
+    <input  type="password"  name="password" placeholder="Password" ng-model="access.password" class="form-control" required/>
+    <div style="color:red" ng-show="access.password.$error.required && access.password.$dirty">Please enter a valid email address.</div>
+
+   </div>
+ </div>
+
+<div class="button-wrapper">
+  <div class="button-wrapper-ckeckbox">
+      <input type="checkbox" name="rememberMe" id="RememberMe" value="Remember me"/>
+  </div>
+    <div class="button-wrapper-label">Remember me</div>     
+</div>
+
+<div class="button-login">
+  <button class="btn btn-primary btn-large" ng-click="login()">Login</button>
+  <a href="#"class="button-login-forgot">Forgot password?</a> 
+     <!--<div style="color:red" ng-show="errors.length > 0" ng-repeat="error in errors">{{error}}</div>-->  
+</div>
+
+</form>
+ </section>
+</div>
+  </div>

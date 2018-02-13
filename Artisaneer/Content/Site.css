@@ -1,0 +1,187 @@
+﻿body {
+    padding-top: 100px; /*font-family:​Verdana,Helvetica,​Arial,​sans-serif;*/ /*font-family:Verdana,​Arial,​sans-serif;*/
+    padding-bottom: 40px; font-size:80%;font-family:"Lucida Grande","Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif, Tahoma;
+}
+.bodya {
+    padding-top: 50px; /*font-family:​Verdana,Helvetica,​Arial,​sans-serif;*/ /*font-family:Verdana,​Arial,​sans-serif;*/
+    padding-bottom: 40px; font-size:80%;font-family:"Lucida Grande","Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif, Tahoma;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+ }
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* styles for removing the background from form */
+.no-color {
+  background-color: white;border-style:none;
+}
+
+.personalCss {	margin-left: 50px; }
+.photoThumbnail
+{
+	float: left; width: auto;height: auto; max-width: 50px;max-height: 100px;
+}
+.textbox {
+ display: inline-block;height: 20px;padding: 4px 6px;border: 1px solid #cccccc;
+ margin-bottom: 10px;font-size: 14px;line-height: 20px;color: #555555;vertical-align: middle;-webkit-border-radius: 4px;
+-moz-border-radius: 4px;border-radius: 4px;
+}
+ .textbox:focus {
+        border-color: rgba(82, 168, 236, 0.8); box-shadow:0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(82, 168, 236, 0.6);
+ }
+ 
+ /*Bootstrap overrides*/
+.wrapper {
+    top: 0;left: 0;right: 0;
+    bottom: 0;background: #fff;
+}
+ .wrapperlog {
+    top: 0;left: 0;right: 0;
+    bottom: 0;background: #fff;
+}
+ .navbar {
+  *position: relative;*z-index: 2;
+  margin-bottom: 20px; overflow: visible;
+}
+
+.navbar .brand { /*for the top-nav*/
+  display: block;float: left; padding: 20px 20px 10px;margin-left: -20px; font-family: 'Libre Baskerville', serif;
+  font-size: 32px; font-weight: 200;color: #777777;text-shadow: 0 1px 0 #ffffff;
+}
+.navbar-inner { /*for the nav container*/
+  min-height: 60px; padding-right: 20px;
+  padding-left: 20px;background-color: #fafafa;
+  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);background-repeat: repeat-x;border: 1px solid #d4d4d4;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  *zoom: 1;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+
+.nav {
+  margin-bottom: 20px; margin-left: 2px; padding-top: 10px; /*font-family:"Helvetica Neue",​Helvetica,​Arial,​sans-serif;*/
+  list-style: none; font-weight:600; font-size:12px;
+}
+.pull-right {
+  float: right;
+}
+h1.intro {
+    font-family:'Wendy One', sans-serif; color:#115F79;
+}
+.regInfo { /*top, right, bottom, left*/
+    background-color:#eeeeee;width:100%;float:left;
+    margin-left:0;margin-right:0;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #1B2024; text-rendering:optimizeLegibility;
+    font-family: museo_sans_rounded,Helvetica,Arial,sans-serif;
+    font-weight: 400;margin-bottom: 20px;
+    margin-top: 0;text-rendering: optimizelegibility;
+}
+span{
+    background-color:#3B5998;
+}
+.ctSign{
+    margin-left:0;margin-right:0;background-color:#eeeeee;text-align:center;padding-top: 50px;
+}
+
+.ctSign h1 {
+    font-size:3.4em;font-weight:100;margin-bottom:1.2em;
+}
+.fb{
+background-color:#3B5998;background-image: url(../Images/fb.jpg);background-repeat:no-repeat;
+display:inline-block;padding:16px 30px 15px 68px;box-shadow:0 3px 0 #2D4373;color:#FFF;
+line-height:25px;font-size:22px;font-family:Georgia,Times,"Times New Roman",serif;
+border:0 none;border-radius:3px;background-size:contain;
+}
+.regInfo .hr{
+    position:relative;width:70%;height:8px;margin-bottom:30px;padding-top:20px; margin-left:15%;margin-right:15%;
+    box-shadow:0 1px 0 #fff;text-align:center;border-bottom:1px solid #D9D9D9;
+}
+.regInfo .hr .inner {
+    background:none repeat scroll 0 0 #eeeeee;border-radius:100px;display:inline-block;width:auto;padding:9px 10px;
+font-family:Georgia,Times,"Times New Roman",serif;font-size:16px;font-style:italic;line-height:0
+}
+/*Signup form region */
+form{
+    -moz-box-sizing:border-box;margin:0 auto 20px;max-width:500px;
+}
+
+input[type="text"], input[type="password"], input[type="datetime"], 
+input[type="datetime-local"], input[type="date"], input[type="month"], input[type="select"],
+input[type="time"], input[type="week"], input[type="number"], input[type="email"], 
+input[type="url"], input[type="search"], input[type="tel"], input[type="color"]{
+    padding-left:10px;height:50px;
+}
+
+.uneditable-input{
+height:50px;margin-bottom:25px;
+} 
+
+.form-control {
+  display: block; width: 100%;height: 34px;padding: 6px 12px;
+  font-size: 14px;line-height: 1.428571429;color: #555555;vertical-align: middle;
+  background-color: #ffffff; background-image: none;border: 1px solid #cccccc;border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+ input, select{
+      height:50px;width:100%;
+}
+.button-create {
+text-align:center; padding-top:25px;
+}
+.button-login {
+    text-align: center;margin-left: -6%;padding-top: 3%;
+}
+.button-login-forgot{
+    padding-left:25%; font-size:14px;
+}
+div.button-wrapper {
+         width:100%; padding:0.1em;
+         margin:0.1em; height:50px;
+}
+
+.button-wrapper-label{
+    margin-left:13%;line-height:48px; font-size:15px;
+    padding:5px 0;color:gray;
+}
+.button-wrapper-ckeckbox{
+    float:left;padding-left:9%;
+}
+/*div.button-wrapper span{
+    display: block;overflow: hidden;
+}
+div.button-wrapper input {
+ width:100%;padding-top:8px; float:left;
+ border:none;background:none;
+}*/ 
+
